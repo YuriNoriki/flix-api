@@ -3,6 +3,12 @@ from genres.models import Genre
 import json
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404
+from rest_framework import generics
+from genres.serializers import GenreSerializer
+
+class GenresCreateListView(generics.ListCreateAPIView):
+    queryset= Genre.objects.all()
+    serializer_class = GenreSerializer
 
 @csrf_exempt
 def genre_create_list_view(request):
