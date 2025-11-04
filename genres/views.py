@@ -10,9 +10,8 @@ class GenresCreateListView(generics.ListCreateAPIView):
     queryset= Genre.objects.all()
     serializer_class = GenreSerializer
 
-@csrf_exempt
+'''@csrf_exempt
 def genre_create_list_view(request):
-    
     if request.method == 'GET':
         genres = Genre.objects.all()
         data = [{'id': genre.id, 'name':genre.name} for genre in genres]
@@ -24,7 +23,7 @@ def genre_create_list_view(request):
         new_genre.save()
         return JsonResponse(
             {'id':new_genre.id,'name':new_genre.name},status=201
-        )
+        )'''
 
 @csrf_exempt
 def genre_detail_view(request,pk):
