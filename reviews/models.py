@@ -19,4 +19,4 @@ class Review(models.Model):
     comment = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return self.movie
+        return self.movieJ
