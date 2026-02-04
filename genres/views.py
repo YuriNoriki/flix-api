@@ -12,7 +12,7 @@ class GenresCreateListView(generics.ListCreateAPIView):
     serializer_class = GenreSerializer
 
 class GenresRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated, GenresPermissionClass)
 
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer 
